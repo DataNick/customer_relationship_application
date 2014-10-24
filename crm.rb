@@ -12,9 +12,17 @@ class CRM
 		puts "Display Attribute"
 		puts "Delete"
 		puts "Exit"
-		
 	end
 
+	def add
+		puts "What is your first name?"
+		first_name = gets.chomp
+		puts "What is your last name?"
+		last_name = gets.chomp
+		puts "What is your email?"
+		email = gets.chomp
+	end
+	
 	def menu
 		puts "Greeting #{name}."
 	end
