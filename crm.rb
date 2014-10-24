@@ -15,6 +15,10 @@ class CRM
 		
 	end
 
+	def menu
+		puts "Greeting #{name}."
+	end
+
 	def name
 
 	end
