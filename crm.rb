@@ -28,19 +28,25 @@ class CRM
 	def modify
 		puts "Please give a contact number."
 		contact_num = gets.chomp
-		if gets.chomp == "Y" or gets.chomp == "y"
+		if (contact_num == "Y" || contact_num== "y")
 			puts "Yes"
-		elsif
-			gets.chomp == "N" or gets.chomp == "n"
+		elsif (contact_num == "N" || contact_num == "n")
 			puts "No"
 		else
 			puts "Please answer yes or no."
 		end
 	end
 
-	def menu
-		puts "Greeting #{name}."
-	end
+	def choose_option
+		puts "Please make a selection."
+		case choose_option
+		when "Add" then add_contact
+		when "Modify" then modify_contact
+		when "Display all" then display_all
+		when "Display contact" then display_contact
+		when "Display attribute" then display_attr
+		when "Delete" then delete_contact
+		end
 
 	def name
 
@@ -49,3 +55,5 @@ end
 crm = CRM.new("nick")
 puts crm.class
 puts crm
+crm.modify
+
