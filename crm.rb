@@ -14,6 +14,19 @@ class CRM
 		puts "Exit"
 	end
 
+	def main_menu
+		print_menu #this calls the print_menu method
+		user_option = gets.to_i 
+		#user selects the item from menu; call
+		#-the-option is passed the user's selection and selects the item from the menu
+		call_the_option(user_option)
+	end
+
+	def call_the_option
+
+	end
+		
+	end
 	def add
 		puts "What is your first name?"
 		first_name = gets.chomp
@@ -37,16 +50,21 @@ class CRM
 		end
 	end
 
-	def choose_option
+	def choose_option(option)
 		puts "Please make a selection."
 		case choose_option
-		when "Add" then add_contact
-		when "Modify" then modify_contact
-		when "Display all" then display_all
-		when "Display contact" then display_contact
-		when "Display attribute" then display_attr
-		when "Delete" then delete_contact
+			#these were words but changed to numbers for ease of implementation
+		when 1 then add_contact # pointing to other methods
+		when 2 then modify_contact
+		when 3 then display_all
+		when 4 then display_contact
+		when 5 then display_attr
+		when 6 then delete_contact
+		else
+			puts "Please make a selection."
+			return
 		end
+	end
 
 	def name
 
