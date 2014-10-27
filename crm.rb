@@ -60,10 +60,12 @@ class CRM
 	end
 
 	def modify_contact
-		puts "Enter id number:"
-		id_delete = gets.chomp.to_i
-		@rolodex.delete_contact(id_delete)
-		puts "Contact #{id_delete} deleted."
+		puts "What contact do you wish to change?"
+		id = gets.chomp.to_i
+		@rolodex.find(id)
+		puts "What part of contact do you wish to change?"
+		change = gets.chomp.downcase
+		@rolodex.modify_contact(change)
 	end
 
 	def display_all
@@ -82,7 +84,10 @@ class CRM
 	end
 
 	def delete_contact
-		
+		puts "Enter id number to be deleted:"
+		id_delete = gets.chomp.to_i
+		@rolodex.delete_contact(id_delete)
+		puts "Contact #{id_delete} deleted."
 	end
 
 end
