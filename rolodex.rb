@@ -1,3 +1,4 @@
+#require "pry"
 class Rolodex
 	attr_reader :contacts
 	@@index = 1000 #1006 for 2 rolodexes.
@@ -11,4 +12,9 @@ class Rolodex
 		@@index += 1
 		@contacts << contact
 	end
+
+	def delete_contact(id_delete)
+		@contacts.delete_if{|contact| contact.id == id_delete}
+	end
+
 end

@@ -75,18 +75,17 @@ class CRM
 	end
 
 	def display_all_contacts
-		@rolodex.contacts.each do |contact|
-			puts "#{contact.first_name} #{contact.last_name} <#{contact.email}>"
+			@rolodex.contacts.each do |contact|
+				puts "#{contact.first_name} #{contact.last_name} <#{contact.email}>"
+		end
 	end
-
-	def display_attr
 		
-	end
 
 	def delete_contact
 		puts "Enter id number to be deleted:"
 		id_delete = gets.chomp.to_i
-		@rolodex.delete_contact(id_delete)
+		@rolodex.delete_contact(id_delete) # calling the method on the rolodex
+		#instance or object, and passing the id number to be deleted.
 		puts "Contact #{id_delete} deleted."
 	end
 
@@ -95,7 +94,4 @@ end
 crm = CRM.new("Bitmaker Labs CRM")
 crm.main_menu
 
-# puts crm.class
-# puts crm
-# crm.modify
 
