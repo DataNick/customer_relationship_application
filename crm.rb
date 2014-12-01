@@ -3,8 +3,22 @@ require 'data_mapper'
 
 DataMapper.setup(:default, "sqlite3:database.sqlite3")
 
-require_relative './contact.rb'
+
 require_relative './rolodex.rb'
+
+class Contact
+	include DataMapper::Resource
+
+	property :id, Serial
+	property :first_name, String
+	property :last_name, String
+	property :email, String
+	property :note, String		
+	end
+
+	DataMapper.finalize
+	DataMapper.auto_upgrade!
+end
 
 class CRM
 	attr_accessor :name
